@@ -14,7 +14,7 @@ static NSUInteger const TAG_FOR_ROW_MORE = 99;
 static NSUInteger const TAG_FOR_ROW_LESS = 100;
 
 
-// Minimum number of rows that should be displayed in each section
+/* Minimum number of rows that should be displayed in each section initially. The number of items in each array for keys in temporaty dicionary (dictTempItems in MainController) should be map this number */
 static NSUInteger const MIN_ROW_IN_SECTION = 3;
 
 
