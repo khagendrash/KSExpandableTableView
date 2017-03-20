@@ -177,13 +177,13 @@ static NSString *SimpleTableIdentifier = @"SimpleTableIdentifier";
         
         
         // array of items to be added or removed from a table section
-        NSArray *arrNew = [arrOriginalItems subarrayWithRange:NSMakeRange(MIN_ROW_IN_SECTION, [arrOriginalItems count] - MIN_ROW_IN_SECTION)];
+        NSArray *arrayExtraItems = [arrOriginalItems subarrayWithRange:NSMakeRange(MIN_ROW_IN_SECTION, [arrOriginalItems count] - MIN_ROW_IN_SECTION)];
         
         // add the current clicked index path
-        NSMutableArray* arr = [NSMutableArray arrayWithCapacity:10];
-        for (int ix = 0; ix < [arrNew count]; ix++) {
+        NSMutableArray* arrayExtraIndexPaths = [NSMutableArray arrayWithCapacity:10];
+        for (int ix = 0; ix < [arrayExtraItems count]; ix++) {
             NSIndexPath* ip = [NSIndexPath indexPathForRow:(MIN_ROW_IN_SECTION + ix) inSection:indexPath.section];
-            [arr addObject: ip];
+            [arrayExtraIndexPaths addObject: ip];
         }
         
         // handle when row for more is selected
@@ -200,7 +200,7 @@ static NSString *SimpleTableIdentifier = @"SimpleTableIdentifier";
             
             // update table by inserting rows
             [self.tableView beginUpdates];
-            [self.tableView insertRowsAtIndexPaths:arr withRowAnimation:UITableViewRowAnimationAutomatic];
+            [self.tableView insertRowsAtIndexPaths:arrayExtraIndexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
             [self.tableView endUpdates];
         }
         else if([self.arrayOfIndexPaths containsObject:[NSNumber numberWithInteger:indexPath.section]]){
@@ -211,19 +211,18 @@ static NSString *SimpleTableIdentifier = @"SimpleTableIdentifier";
             [self.arrayOfIndexPaths removeObject:[NSNumber numberWithInteger:indexPath.section]];
             
             // update data source with only the minimum numbers of rows to be displayed
-            NSArray *arrSub = [arrOriginalItems subarrayWithRange:NSMakeRange(0, MIN_ROW_IN_SECTION)];
-            [dictItems setObject:arrSub forKey:key];
+            NSArray *arrayWithMinItems = [arrOriginalItems subarrayWithRange:NSMakeRange(0, MIN_ROW_IN_SECTION)];
+            [dictItems setObject:arrayWithMinItems forKey:key];
             self.dictTempItems = [NSDictionary dictionaryWithDictionary:dictItems];
             
             // upadate table by removing rows
             [self.tableView beginUpdates];
-            [self.tableView deleteRowsAtIndexPaths:arr withRowAnimation:UITableViewRowAnimationAutomatic];
+            [self.tableView deleteRowsAtIndexPaths:arrayExtraIndexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
             [self.tableView endUpdates];
         }
     }
     else{
         // Statements for row selected other than more/less
-        
         NSLog(@"Other than more/less row clicked");
     }
 }
