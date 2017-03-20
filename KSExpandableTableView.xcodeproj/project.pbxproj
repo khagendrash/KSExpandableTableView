@@ -17,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18373AB91E7FD01E0034BA17 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		18447AC11E67D41D00938EBC /* KSExpandableTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KSExpandableTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18447AC51E67D41D00938EBC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18447AC71E67D41D00938EBC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -64,6 +65,7 @@
 			children = (
 				18447AC71E67D41D00938EBC /* AppDelegate.h */,
 				18447AC81E67D41D00938EBC /* AppDelegate.m */,
+				18373AB91E7FD01E0034BA17 /* Constants.h */,
 				18447ADB1E67D77F00938EBC /* Note.h */,
 				18447ADF1E67E7DD00938EBC /* Helpers.h */,
 				18447AE01E67E7DD00938EBC /* Helpers.m */,
@@ -317,6 +319,7 @@
 				18447ADA1E67D41D00938EBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

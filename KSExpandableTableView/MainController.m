@@ -8,15 +8,8 @@
 
 #import "MainController.h"
 #import "Helpers.h"
+#import "Constants.h"
 
-
-// Variables and constants declaration section
-static NSUInteger const TAG_FOR_ROW_MORE = 99;
-static NSUInteger const TAG_FOR_ROW_LESS = 100;
-
-
-// Minimum number of rows that should be displayed in each section
-static NSUInteger const MIN_ROW_IN_SECTION = 3;
 
 // Table cell Identifier
 static NSString *SimpleTableIdentifier = @"SimpleTableIdentifier";
@@ -27,7 +20,6 @@ static NSString *SimpleTableIdentifier = @"SimpleTableIdentifier";
 @property(weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
-
 
 
 @implementation MainController
@@ -51,30 +43,32 @@ static NSString *SimpleTableIdentifier = @"SimpleTableIdentifier";
 // do some initialization
 -(void) myInitialization
 {
+    // The keys that are displayed as section title
+    self.arrayKeys = @[PLANETS,INSTRUMENTS,PHONES,FRUITS,SAARC];
+    
+    
     // Model that contain all the items in each key/section
     self.dictOriginalItems = @{
-                               @"PLANETS" : @[@"Mars",@"Jupiter",@"Mercury",@"Satrun",@"Venus",@"Earth",@"Uranus",@"Neptune"],
+                               PLANETS : @[@"Mars",@"Jupiter",@"Mercury",@"Satrun",@"Venus",@"Earth",@"Uranus",@"Neptune"],
                                
-                               @"MUSICAL INSTRUMENTS" : @[@"Guitar",@"Piano",@"Violin",@"Trumpet",@"Flute",@"Trumpet"],
+                               INSTRUMENTS : @[@"Guitar",@"Piano",@"Violin",@"Trumpet",@"Flute",@"Trumpet"],
                                
-                               @"SMART PHONES" : @[@"Iphone",@"Android",@"Windows"],
+                               PHONES : @[@"Iphone",@"Android",@"Windows"],
                                
-                               @"FRUITS" : @[@"Apple",@"Orange",@"Grapes",@"Mango",@"Cherry",@"Banana"],
+                               FRUITS : @[@"Apple",@"Orange",@"Grapes",@"Mango",@"Cherry",@"Banana"],
                                
-                               @"SAARC COUNTRIES" : @[@"Afganistan",@"Bangladesh",@"Bhutan",@"India",@"Maldives",@"Nepal",@"Pakistan",@"Sri Lanka"]
+                               SAARC : @[@"Afganistan",@"Bangladesh",@"Bhutan",@"India",@"Maldives",@"Nepal",@"Pakistan",@"Sri Lanka"]
                                };
     
-    // The keys that are displayed as section title
-    self.arrayKeys = @[@"PLANETS",@"MUSICAL INSTRUMENTS",@"SMART PHONES",@"FRUITS",@"SAARC COUNTRIES"];
     
     // The temporary model to show minimum items. The number of items in each key should be equal to the value set for MIN_ROW_IN_SECTION (see constant variable declaration)
     self.dictTempItems = @{
-                           @"PLANETS" : @[@"Mars",@"Jupiter",@"Mercury"],
-                           @"MUSICAL INSTRUMENTS" : @[@"Guitar",@"Piano",@"Violin"],
-                           @"SMART PHONES" : @[@"Iphone",@"Android",@"Windows"],
-                           @"FRUITS" : @[@"Apple",@"Orange",@"Grapes"],
-                           @"SAARC COUNTRIES" : @[@"Afganistan",@"Bangladesh",@"Bhutan"]
-                           };
+                           PLANETS : @[@"Mars",@"Jupiter",@"Mercury"],
+                           INSTRUMENTS : @[@"Guitar",@"Piano",@"Violin"],
+                           PHONES : @[@"Iphone",@"Android",@"Windows"],
+                           FRUITS : @[@"Apple",@"Orange",@"Grapes"],
+                           SAARC : @[@"Afganistan",@"Bangladesh",@"Bhutan"]
+                        };
     
     
     if(self.arrayOfIndexPaths == nil){

@@ -20,7 +20,7 @@
     }
 }
 
-
+// get up/down arrow image
 + (UIImageView *) getArrow:(NSString *) arrowType
 {
     UIImageView *ivArrowBottom = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 18.0, 18.0)];
