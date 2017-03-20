@@ -51,7 +51,7 @@ static NSString *SimpleTableIdentifier = @"SimpleTableIdentifier";
     self.dictOriginalItems = @{
                                PLANETS : @[@"Mars",@"Jupiter",@"Mercury",@"Satrun",@"Venus",@"Earth",@"Uranus",@"Neptune"],
                                
-                               INSTRUMENTS : @[@"Guitar",@"Piano",@"Violin",@"Trumpet",@"Flute",@"Trumpet"],
+                               INSTRUMENTS : @[@"Guitar",@"Piano",@"Violin",@"Trumpet",@"Flute",@"Saxophone"],
                                
                                PHONES : @[@"Iphone",@"Android",@"Windows"],
                                
